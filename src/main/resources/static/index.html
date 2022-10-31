@@ -129,6 +129,16 @@
         <h1>Chatroom</h1>
 
         <div>
+
+            <div id="status">
+                <form class="centered">
+                    <input type="radio" id="online" name="statusoptions" value="online" onchange="setOnline()" checked>
+                    <label for="online">Online</label>
+                    <input type="radio" id="offline" name="statusoptions" value="offline" onchange="setOffline()">
+                    <label for="offline">Offline</label><br>
+                </form>
+            </div>
+
             <div class='chatbox__user-list' id="dvTable">
             </div>
 
