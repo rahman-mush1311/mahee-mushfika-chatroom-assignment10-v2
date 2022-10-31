@@ -32,19 +32,52 @@
 
     }
 </script>
+
+
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Chatroom</title>
 </head>
 <body>
-<div class="container">
-    <div id="register">
-        <div class="vertical-center">
-            <h1>Start Page</h1>
-            <input type="text" id="from" placeholder="enter your chatUser name"/>
-            <button id="connect" onclick="connect();">Connect</button>
+<div>
+    <div class="container">
+        <div id="register">
+            <div class="vertical-center">
+                <h1>Start Page</h1>
+                <input type="text" id="from" placeholder="enter your chatUser name"/>
+                <button id="connect" onclick="connect();">Connect</button>
+            </div>
         </div>
+    </div>
+
+    <div id="chatroomDiv" style="visibility:hidden" class="centered">
+
+        <h1>Chatroom</h1>
+
+        <div>
+            <div class='chatbox__user-list' id="dvTable">
+            </div>
+
+            <div class="box">
+                <span id="response"> </span>
+                <div class="p.message" id="conversation">
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="vertical-center2">
+            <input type="text" id="message" placeholder="enter your message" autocomplete="off" class="form-control">
+            <button id="send" onclick="sendMessage();">Send</button>
+        </div>
+
+    </div>
+
+        </div>
+
     </div>
 </div>
 </body>
+
+
 </html>
