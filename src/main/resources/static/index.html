@@ -35,6 +35,28 @@
         chatroomDivV.style.visibility = 'visible';
 
     }
+
+    function onMessageReceived(payload) {
+        if (document.getElementById("online").checked) {
+            var payloadData = JSON.parse(payload.body);
+            console.log(payloadData);
+            var response = document.getElementById('conversation');
+            var p = document.createElement('p');
+
+            var senderName = payloadData.chatMessage.senderName;
+            var messageSent = payloadData.chatMessage.message;
+
+            var p = document.createElement('p');
+            p.style.wordWrap = 'break-word';
+
+            p.appendChild(document.createTextNode(senderName + ":  " + messageSent));
+            response.appendChild(p);
+            response.appendChild(document.createElement('br'));
+
+        }
+
+    }
+    
 </script>
 
 
