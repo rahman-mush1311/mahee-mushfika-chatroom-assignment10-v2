@@ -34,3 +34,18 @@
     padding: 10px 24px;
     margin-bottom: 1.3rem;
 }
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.vertical-center2 {
+    margin: 10px auto;
+    width: 20%;
+}
+.centered {
+
+    text-align: center;
+}
