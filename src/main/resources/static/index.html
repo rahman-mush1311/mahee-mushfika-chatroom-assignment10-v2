@@ -61,7 +61,7 @@
     function connect() {
         var socket = new SockJS('http://localhost:8080/ws');
         stompClient = Stomp.over(socket);
-        stompClient.connect({}, setConnected, onError);
+        stompClient.connect({}, setConnected);
         var registerDiv = document.getElementById('register');
         registerDiv.style.visibility = 'hidden';
 
