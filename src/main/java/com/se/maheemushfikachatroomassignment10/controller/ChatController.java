@@ -35,6 +35,7 @@ public class ChatController {
     public ResponseEntity<List<ChatUser>> getUsers() {
         return new ResponseEntity<>(chatUserRepository.findAll(), HttpStatus.OK);
     }
+
     @MessageMapping("/chat.addUser")
     @SendTo("/chatroom/greetings")
     public List<ChatUser> addUser(@Payload Message chatMessage,
@@ -54,7 +55,6 @@ public class ChatController {
     @SendTo("/chatroom/greetings")
     public List<ChatUser> activeUser(@Payload Message chatMessage,
                                      SimpMessageHeaderAccessor headerAccessor) {
-        // Add username in web socket session
         ChatUser chatUser = chatUserRepository.findByUsername(chatMessage.getSenderName());
         if (chatUser == null) {
             chatUser = new ChatUser(chatMessage.getSenderName());
