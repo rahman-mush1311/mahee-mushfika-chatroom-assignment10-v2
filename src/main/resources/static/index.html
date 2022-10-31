@@ -104,6 +104,22 @@
 
     }
 
+    function setOnline() {
+
+        stompClient.send("/app/chat.setActiveUser",
+            {},
+            JSON.stringify({senderName: username, type: 'JOIN'})
+        );
+    }
+
+    function setOffline() {
+
+        stompClient.send("/app/chat.setInActiveUser",
+            {},
+            JSON.stringify({senderName: username, type: 'JOIN'})
+        );
+    }
+
 </script>
 
 
