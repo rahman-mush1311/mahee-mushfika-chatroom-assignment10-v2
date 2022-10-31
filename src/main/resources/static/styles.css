@@ -9,7 +9,7 @@
 
 }
 #connect {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
     border: none;
     color: white;
     margin: auto;
@@ -49,10 +49,7 @@ h1 {
 }
 
 .box{
-    /*max-width: 450px;*/
-    /*padding: 15px;*/
-    /*border-radius: 15px;*/
-    /*background: var(--left-msg-bg);*/
+
     background: rgba(255, 255, 255, 0.05);
     width: 400px;
     height: 200px;
@@ -62,23 +59,7 @@ h1 {
     box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
 }
 
-/*.user-list {*/
-/*    background: rgba(255, 255, 255, 0.1);*/
-/*    width: 25%;*/
-/*    height: 100%;*/
-/*    float: right;*/
-/*    border-top-right-radius: 0.2em;*/
-/*    border-bottom-right-radius: 0.2em;*/
-/*h1 {*/
-/*    background: rgba(255, 255, 255, 0.05);*/
-/*    color: rgba(255, 255, 255, 0.9);*/
-/*    font-size: 0.9em;*/
-/*    padding: 1em;*/
-/*    margin: 0;*/
-/*    font-weight: 300;*/
-/*    text-align: center;*/
-/*}*/
-/*}*/
+
 #send {
     background-color: red; /* Green */
     border: none;
@@ -121,15 +102,7 @@ h1 {
     border-bottom-right-radius: 0.2em;
 }
 
-/*.chatbox__user-list h1 {*/
-/*    background: rgba(255, 255, 255, 0.05);*/
-/*    color: rgba(0, 0, 0, 0.9);*/
-/*    font-size: 0.9em;*/
-/*    padding: 1em;*/
-/*    margin: 0;*/
-/*    font-weight: 300;*/
-/*    text-align: center;*/
-/*}*/
+
 
 .chatbox__user, .chatbox__user--away, .chatbox__user--busy, .chatbox__user--active {
     width: 0.5em;
