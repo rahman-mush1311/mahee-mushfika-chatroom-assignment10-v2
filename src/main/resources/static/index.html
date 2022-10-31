@@ -55,8 +55,22 @@
 
         }
 
+        function sendMessage() {
+            if (document.getElementById("online").checked) {
+                var messageSent = document.getElementById('message').value;
+
+                var chatMessage = {
+                    senderName: username,
+                    status: "JOIN",
+                    message: messageSent
+                };
+
+                stompClient.send("/chatroom/public", {}, JSON.stringify({chatMessage}));
+            }
+        }
+
     }
-    
+
 </script>
 
 
