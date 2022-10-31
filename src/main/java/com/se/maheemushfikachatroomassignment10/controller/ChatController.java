@@ -65,4 +65,19 @@ public class ChatController {
         return chatUserRepository.findAll();
     }
 
+    @MessageMapping("/chat.setInActiveUser")
+    @SendTo("/chatroom/greetings")
+    public List<ChatUser> inactiveUser(@Payload Message chatMessage,
+                                       SimpMessageHeaderAccessor headerAccessor) {
+        // Add username in web socket session
+        ChatUser chatUser = chatUserRepository.findByUsername(chatMessage.getSenderName());
+        if (chatUser == null) {
+            chatUser = new ChatUser(chatMessage.getSenderName());
+        }
+        chatUser.setActive(false);
+        chatUserRepository.save(chatUser);
+
+        return chatUserRepository.findAll();
+    }
+
 }
