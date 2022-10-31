@@ -1,5 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script type="text/javascript">
+    function setConnected() {
+        var connected = document.getElementById('connect');
+        username = document.getElementById('from').value;
+        setConnection = true;
+        if (setConnection) {
+            console.log('Connected: ' + username);
+            stompClient.subscribe('/chatroom/public', onMessageReceived);
+            stompClient.subscribe('/chatroom/greetings', updateConnectedUsers);
+
+
+            stompClient.send("/app/chat.addUser",
+                {},
+                JSON.stringify({senderName: username, type: 'JOIN'})
+            )
+        }
+
+
+
+    }
+    function connect() {
+        var socket = new SockJS('http://localhost:8080/ws');
+        stompClient = Stomp.over(socket);
+        stompClient.connect({}, setConnected, onError);
+        var registerDiv = document.getElementById('register');
+        registerDiv.style.visibility = 'hidden';
+
+    }
+</script>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
